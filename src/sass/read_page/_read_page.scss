@@ -1,0 +1,58 @@
+.revision-date {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.revision-date-title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  padding-bottom: 12px;
+  color: #111321;
+  border-bottom: 1px solid #929292;
+}
+.dark .revision-date-title {
+  color: #ffffff;
+}
+
+.revision-date-arrow {
+  border: solid #111321;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 6px;
+  margin-left: 4px;
+}
+.dark .revision-date-arrow {
+  border-color: #ffffff;
+}
+.down {
+  position: relative;
+  top: 5px;
+  left: 6px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(-135deg);
+  // transform: matrix(0, 1, 1, 0, 0, 0);
+}
+
+.up {
+  position: relative;
+  top: -3px;
+  left: 6px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  // transform: rotate(-90deg);
+}
+
+.gallery-text {
+  transition: 0.7s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 28px;
+}
+
+.dis-none {
+  display: none;
+}

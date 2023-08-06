@@ -1,2 +1,23 @@
-@import './common';
-@import './example';
+@import './base/common';
+@import './base/reset';
+
+@import './components/section';
+@import './components/container';
+
+@import './burger/burger';
+@import './header/header';
+
+@import './home_page/home_page';
+@import './home_page/calendar';
+@import './pagination/pagination';
+
+@import './favourite_page/favourite_page';
+
+@import './read_page/read_page';
+
+@import './footer/footer';
+
+@import './categories/categories';
+
+@import './default_page';
+@import './decoration_style';

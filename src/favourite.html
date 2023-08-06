@@ -12,30 +12,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./sass/index.scss" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./icons/favicon-16x16.png"
-    />
-    <link
-      rel="mask-icon"
-      href="./icons/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
   </head>
 
   <body>
@@ -44,15 +20,15 @@
 
     <include src="./partials/header/header.html"></include>
 
-    <!-- <include src="./partials/default_page.html"></include> -->
-
-    <include src="./partials/home_page/home_page.html"></include>
-
+    <include src="./partials/favourite_page/favourite_page.html"></include>
+    <!-- <include src="./partials/favourite_page/favourire_default.html"></include> -->
     <include src="./partials/footer/footer.html"></include>
 
     <script type="module" src="./index.js"></script>
-    <script type="module" src="./js/category/categories.js"></script>
-    <script type="module" src="./js/calendar/calendar.js"></script>
+    <script
+      type="module"
+      src="./js/defaultPage/defaultPageFavorite.js"
+    ></script>
 
     <script src="./js/weather/weather.js" type="module"></script>
   </body>
