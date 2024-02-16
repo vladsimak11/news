@@ -3,7 +3,7 @@ import { firmatDate } from './templateMarkupNews';
 import NewsApiServis from './serviseNewsSearch';
 
 import { templateMarkupNews } from './templateMarkupNews';
-import InitPagination from '../../pagination/pagination'; //Pagination Simak
+import InitPagination from '../../pagination/pagination';
 
 import addFavourite from '../../addFavourite/addFavourite';
 
@@ -12,7 +12,7 @@ import newDefaultMarkup from '../../defaultPage/defaultPageHome';
 const galleryRef = document.querySelector('.gallery');
 const galleryPageRef = document.querySelector('.gallery-page');
 const searchFormRef = document.querySelector('#search-form');
-let currentPage; //Pagination Simak
+let currentPage;
 
 searchFormRef.addEventListener('submit', onSearchForm);
 
@@ -32,38 +32,33 @@ export default function onSearchForm(e) {
   clearGalleryInterface();
   newsApiServis.query = value;
 
-  // onClickNext();
   requestToServer(newsApiServis.query);
 }
 
-const formatDate = someDate => +someDate.split('/').join(''); //форматуємо дату в суцільне число
+const formatDate = someDate => +someDate.split('/').join('');
 
 if (galleryPageRef) {
-  const inputDate = document.querySelector('.calendar-input'); //інпут календаря
+  const inputDate = document.querySelector('.calendar-input');
 
-  inputDate.addEventListener('blur', onSelectedDate); //при втраті фокусу слухаємо дату
+  inputDate.addEventListener('blur', onSelectedDate);
 }
 
-let isSelected = false; //перед рендером показує чи була вибрана дата
-let dateNumber; //змінна в яку ми винесемо дату календаря
+let isSelected = false;
+let dateNumber;
 
 function onSelectedDate(e) {
-  // console.log(e.target);
   isSelected = true;
-  dateNumber = formatDate(e.target.value); //відформатована дата календаря
+  dateNumber = formatDate(e.target.value);
 }
 
 function filterResponce(dataToFilter, dateNumber) {
-  // console.log('filterResponce');
   const filterResult = dataToFilter.filter(item => {
-    // console.log(item.pub_date);
     const itemDate = firmatDate(item.pub_date);
     const correctDate = formatDate(itemDate);
-    // console.log(correctDate, dateNumber);
     return correctDate === dateNumber;
   });
 
-  return filterResult; //фукнція фільтр, викликаємо там де отримуємо дані
+  return filterResult;
 }
 
 async function requestToServer(valueQuery) {
@@ -73,7 +68,7 @@ async function requestToServer(valueQuery) {
     let totalResult = newsDateResponse;
 
     if (isSelected) {
-      //якщо відбувся клік то фільтруємо
+
       totalResult = filterResponce(newsDateResponse, dateNumber);
       renderTemplate(totalResult);
     }
@@ -88,9 +83,8 @@ async function requestToServer(valueQuery) {
 
     renderTemplate(totalResult);
 
-    InitPagination.init(valueQuery, (currentPage = 1)); //Pagination Simak
+    InitPagination.init(valueQuery, (currentPage = 1));
 
-    // const useID = newsDateResponse.map(onId => arr.push(onId._id));
     document.getElementById('pagination-container').style.display = 'flex';
 
     addFavourite(totalResult);
@@ -100,8 +94,6 @@ async function requestToServer(valueQuery) {
 }
 
 searchFormRef.addEventListener('submit', onSearchForm);
-
-// requestToServer(newsApiServis.query);
 
 function renderTemplate(e) {
   galleryRef.innerHTML = templateMarkupNews(e);

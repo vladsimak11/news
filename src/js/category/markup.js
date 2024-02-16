@@ -1,16 +1,15 @@
-import dateFormat, { masks } from 'dateformat';
+import dateFormat from 'dateformat';
+
 export function newsMarkup({
-  //   id, //data-id="${id}"
   multimedia,
-  section, //category
-  abstract, //description
-  title, //title
+  section, 
+  abstract, 
+  title, 
   published_date,
-  url, //Read more
+  url,
   slug_name,
 }) {
   const img = multimedia[2].url;
-  // console.log(img); //------ссилка на картинку
   function checkUrkImg() {
     if (!multimedia.length) {
       return 'https://placehold.co/400x400?text=NO+IMAGE';

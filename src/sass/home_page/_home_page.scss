@@ -148,26 +148,29 @@ button.newsHP-categories:hover {
     width: 288px;
     height: 470px;
   }
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
-    height: 675px;
+    height: 545px;
     width: 353px;
     float: right;
   }
+
   @media screen and (min-width: 1280px) {
     width: 395px;
-    height: 675px;
+    height: 545px;
     float: right;
   }
 }
 
 .weather-info {
   display: flex;
-  margin: 32px 30px 40px 30px;
+  margin: 25px 30px 0px 30px;
   align-items: center;
+
   @media screen and (min-width: 768px) {
-    margin-top: 40px;
     justify-content: center;
-    margin-bottom: 90px;
+    margin-top: 15px;
+    margin-bottom: 0;
   }
 }
 .degrees {
@@ -238,13 +241,8 @@ button.newsHP-categories:hover {
   margin: 0 auto;
   width: 148px;
   height: 141px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 70px;
-  }
 }
-.weather-icon {
-  margin-bottom: 30px;
-}
+
 .week-day,
 .weather-date {
   font-family: 'Roboto';
@@ -252,15 +250,22 @@ button.newsHP-categories:hover {
   line-height: 1.17;
   color: $extra-color;
   text-align: center;
+
   @media screen and (min-width: 768px) {
+    font-size: 44px;
+    line-height: 1.16;
+  }
+
+  @media screen and (min-width: 1280px) {
     font-size: 46px;
     line-height: 1.16;
   }
 }
 .weather-date {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+
   @media screen and (min-width: 768px) {
-    margin-bottom: 28px;
+    margin-bottom: 80px;
   }
 }
 .weatherApp-link {
@@ -277,11 +282,10 @@ button.newsHP-categories:hover {
     rgba(164, 146, 154, 1) 8%,
     rgba(61, 103, 215, 1) 100%
   );
-  box-shadow: 0 0.5em 0.5em -0.4em extra-color;
+  box-shadow: 0 0.5em 0.5em -0.4em $extra-color;
   opacity: 0.8;
-  margin-bottom: 32px;
+
   @media screen and (min-width: 768px) {
-    margin-bottom: 60px;
     font-size: 20px;
     line-height: 1.15;
   }
@@ -318,10 +322,6 @@ button.newsHP-categories:hover {
   }
 }
 
-.dark .newsHomePage-card {
-  box-shadow: 0px 10px 13px -7px #000000,
-    0px 5px 15px 0px rgba(236, 209, 235, 0.979);
-}
 .marked-opacity {
   opacity: 0.7;
 }
@@ -332,12 +332,6 @@ button.newsHP-categories:hover {
 
 .marked-read {
   text-align: center;
-}
-
-.dark .newsHomePage-text {
-  color: $extra-color;
-  box-shadow: 0px 10px 13px -7px #000000,
-    0px 5px 15px 0px rgba(236, 209, 235, 0.979);
 }
 
 .next-btn {

@@ -1,6 +1,3 @@
-import './markupNews/markupNewsCards';
-import './searchNewsByQuery/serachNewsByQuery';
 import './loadPopularNews/loadPopularNews';
-import './markupNews/renderNews'
-
-
+import './markupNews/markupNewsCards';
+import './markupNews/renderNews';

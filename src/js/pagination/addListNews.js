@@ -23,11 +23,11 @@ function addListNews(newsDateResp) {
           src="${checkUrkImg()}"
           alt="news cover"
           width="288"
-          height="395"
+          height="264"
         />
         <p class="newsHomePage-status-read">Already read</p>
         <p class="newsHomePage-search-category">${news_desk}</p>
-        <button class="add-to-favBtn" type="button">Add to favourite
+        <button class="btn-favorite" type="button">Add to favourite
                     <svg class="heart" width="16" height="16">
                         <use href="/assets/svg/symbol-defs.svg#icon-unclicked_heart">
                         </use>

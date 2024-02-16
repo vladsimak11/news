@@ -15,13 +15,14 @@ export const newsCardMarkup = ({
         <img
           class="newsHomePage-image"
           src="${image_url}"
-          alt="news cover"
+          alt="News cover"
           width="288"
+          height="265"
         />
         <p class="dispNo newsHomePage-status-read">Already read</p>
         <p class="newsHomePage-search-category">${section}</p>
 
-        <button class="add-to-favBtn" type="button" data-id="${id}">
+        <button class="btn-favorite" type="button" data-id="${id}">
           Add to favourite
             <svg class="heart" width="16" height="16">
               <use href="${iconsSvgAdd}#icon-unclicked_heart"></use>

@@ -25,7 +25,6 @@ p {
 img {
   display: block;
   width: 100%;
-  height: auto;
 }
 
 ul {
@@ -802,7 +801,7 @@ input:hover::placeholder {
 }
 
 .newsHomePage-card {
-  height: 630px;
+  height: 545px;
   -webkit-box-shadow: 3px 3px 10px rgb(153, 147, 149);
           box-shadow: 3px 3px 10px rgb(153, 147, 149);
   border-radius: 15px;
@@ -810,13 +809,11 @@ input:hover::placeholder {
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .newsHomePage-card {
     width: 353px;
-    height: 675px;
   }
 }
 @media screen and (min-width: 1280px) {
   .newsHomePage-card {
     width: 395px;
-    height: 675px;
   }
 }
 
@@ -872,7 +869,7 @@ input:hover::placeholder {
   border-top-right-radius: 5px;
 }
 
-.add-to-favBtn {
+.btn-favorite {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -892,62 +889,38 @@ input:hover::placeholder {
   padding: 6px 12px;
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  .add-to-favBtn {
-    left: 154px;
-    top: 355px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-  .add-to-favBtn {
-    left: 215px;
-    top: 355px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .add-to-favBtn {
-    left: 256px;
+  .btn-favorite {
+    left: 140px;
     top: 220px;
   }
 }
-
-.remove-from-favourite {
-  position: absolute;
-  cursor: pointer;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 5px;
-  border-width: 0;
-  width: 168px;
-  padding: 6px 12px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.14;
-  border-radius: 20px;
-}
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .remove-from-favourite {
-    left: 112px;
-    top: 355px;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-  .remove-from-favourite {
-    left: 173px;
-    top: 355px;
+@media screen and (min-width: 768px) {
+  .btn-favorite {
+    left: 200px;
+    top: 220px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .remove-from-favourite {
-    left: 215px;
-    top: 355px;
+  .btn-favorite {
+    left: 245px;
   }
 }
 
+.btn-favorite-add {
+  background-color: #4440f6;
+  color: #ffffff;
+}
+
 .newsHomePage-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 145px;
   padding: 5px;
   font-weight: 700;
@@ -955,6 +928,7 @@ input:hover::placeholder {
   letter-spacing: -0.01em;
   margin-bottom: 10px;
   text-align: center;
+  border-radius: 15px;
   color: #ffffff;
   background: #4440f6;
 }
@@ -970,12 +944,12 @@ input:hover::placeholder {
 }
 
 .newsHomePage-text {
-  padding-left: 5px;
+  padding-left: 10px;
   padding-right: 5px;
+  max-height: 56px;
 }
 @media screen and (max-width: 767px) {
   .newsHomePage-text {
-    max-height: 50px;
     overflow: hidden;
   }
 }
@@ -984,6 +958,10 @@ input:hover::placeholder {
     font-size: 16px;
     height: 66px;
   }
+}
+
+.dark .newsHomePage-text {
+  color: #ffffff;
 }
 
 .homePage-readMore {
@@ -998,6 +976,7 @@ input:hover::placeholder {
           justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
+  margin-top: 15px;
 }
 @media screen and (max-width: 767px) {
   .homePage-readMore {
@@ -1008,6 +987,7 @@ input:hover::placeholder {
   .homePage-readMore {
     font-size: 16px;
     height: 22px;
+    margin-top: 0;
   }
 }
 
@@ -1016,9 +996,24 @@ input:hover::placeholder {
 }
 
 .newsHomePage-readMore-link {
-  color: #4440f6;
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-color: #4440f6;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  color: #fff;
   text-decoration: none;
-  padding-bottom: 3px;
+}
+.newsHomePage-readMore-link:hover {
+  color: #111321;
+  border-radius: 5px;
+  border: 2px solid #4440f6;
+  background-color: transparent;
+}
+
+.dark .newsHomePage-readMore-link {
+  color: #ffffff;
 }
 
 .dark body {
@@ -1222,7 +1217,7 @@ button.newsHP-categories:hover svg.categ-arrow-down {
 }
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .weather-app {
-    height: 675px;
+    height: 545px;
     width: 353px;
     float: right;
   }
@@ -1230,7 +1225,7 @@ button.newsHP-categories:hover svg.categ-arrow-down {
 @media screen and (min-width: 1280px) {
   .weather-app {
     width: 395px;
-    height: 675px;
+    height: 545px;
     float: right;
   }
 }
@@ -1239,18 +1234,18 @@ button.newsHP-categories:hover svg.categ-arrow-down {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 32px 30px 40px 30px;
+  margin: 25px 30px 0px 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 @media screen and (min-width: 768px) {
   .weather-info {
-    margin-top: 40px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-bottom: 90px;
+    margin-top: 15px;
+    margin-bottom: 0;
   }
 }
 
@@ -1336,15 +1331,6 @@ button.newsHP-categories:hover svg.categ-arrow-down {
   width: 148px;
   height: 141px;
 }
-@media screen and (min-width: 768px) {
-  .sun-moon {
-    margin-bottom: 70px;
-  }
-}
-
-.weather-icon {
-  margin-bottom: 30px;
-}
 
 .week-day,
 .weather-date {
@@ -1357,17 +1343,24 @@ button.newsHP-categories:hover svg.categ-arrow-down {
 @media screen and (min-width: 768px) {
   .week-day,
   .weather-date {
+    font-size: 44px;
+    line-height: 1.16;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .week-day,
+  .weather-date {
     font-size: 46px;
     line-height: 1.16;
   }
 }
 
 .weather-date {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 @media screen and (min-width: 768px) {
   .weather-date {
-    margin-bottom: 28px;
+    margin-bottom: 80px;
   }
 }
 
@@ -1382,14 +1375,12 @@ button.newsHP-categories:hover svg.categ-arrow-down {
   background: rgb(164, 146, 154);
   background: -webkit-gradient(linear, left top, right top, color-stop(8%, rgb(164, 146, 154)), to(rgb(61, 103, 215)));
   background: linear-gradient(90deg, rgb(164, 146, 154) 8%, rgb(61, 103, 215) 100%);
-  -webkit-box-shadow: 0 0.5em 0.5em -0.4em extra-color;
-          box-shadow: 0 0.5em 0.5em -0.4em extra-color;
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em #ffffff;
+          box-shadow: 0 0.5em 0.5em -0.4em #ffffff;
   opacity: 0.8;
-  margin-bottom: 32px;
 }
 @media screen and (min-width: 768px) {
   .weatherApp-link {
-    margin-bottom: 60px;
     font-size: 20px;
     line-height: 1.15;
   }
@@ -1452,11 +1443,6 @@ button.newsHP-categories:hover svg.categ-arrow-down {
   }
 }
 
-.dark .newsHomePage-card {
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 5px 15px 0px rgba(236, 209, 235, 0.979);
-          box-shadow: 0px 10px 13px -7px #000000, 0px 5px 15px 0px rgba(236, 209, 235, 0.979);
-}
-
 .marked-opacity {
   opacity: 0.7;
 }
@@ -1469,12 +1455,6 @@ button.newsHP-categories:hover svg.categ-arrow-down {
 
 .marked-read {
   text-align: center;
-}
-
-.dark .newsHomePage-text {
-  color: #ffffff;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 5px 15px 0px rgba(236, 209, 235, 0.979);
-          box-shadow: 0px 10px 13px -7px #000000, 0px 5px 15px 0px rgba(236, 209, 235, 0.979);
 }
 
 .next-btn {
@@ -2734,23 +2714,6 @@ ul.categories-list::-webkit-scrollbar {
 .newsHP-categories:after {
   -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.newsHomePage-readMore-link {
-  padding: 2px 5px;
-  border-radius: 5px;
-  border: 2px solid transparent;
-  background-color: var(--accent-color);
-  -webkit-transition: all 0.25s ease-in;
-  transition: all 0.25s ease-in;
-  color: #fff;
-}
-
-.newsHomePage-readMore-link:hover {
-  color: var(--main-text-color);
-  border-radius: 5px;
-  border: 2px solid var(--accent-color);
-  background-color: transparent;
 }
 
 .footer-social-link:active {

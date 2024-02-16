@@ -6,10 +6,10 @@ let newsDefaultMarkup = () => {
   return `
   <div class="default-news container">
     <h2 class="default-news-title">We haven’t found news from this category</h2>
-       <div class="default-news-img">
-       <img srcset='${imgDefault1} 1x, ${imgDefault2} 2x'
-       src="${imgDefault1}" alt="default-news" width="248" height="198">
-        </div>
+      <div class="default-news-img">
+      <img srcset='${imgDefault1} 1x, ${imgDefault2} 2x'
+      src="${imgDefault1}" alt="default-news" width="248" height="198">
+      </div>
 </div>
     `;
 };

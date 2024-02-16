@@ -22,14 +22,14 @@ export function templateMarkupNews(newsDateResp) {
         <img
           class="newsHomePage-image"
           src="${checkUrkImg()}"
-          alt="news cover"
+          alt="News cover"
           width="288"
-          height="395"
+          height="264"
         />
         <p class="dispNo newsHomePage-status-read">Already read</p>
         <p class="newsHomePage-search-category">${news_desk}</p>
         
-        <button class="add-to-favBtn test-favBtn" type="button" data-id=${_id}>Add to favourite
+        <button class="btn-favorite" type="button" data-id=${_id}>Add to favourite
                     <svg class="heart" width="16" height="16">
                         <use href="../assets/svg/symbol-defs.svg#icon-unclicked_heart">
                         </use>

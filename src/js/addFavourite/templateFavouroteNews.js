@@ -35,12 +35,12 @@ export function templateFavouroteNews(newsDateResp) {
           src="${fooImg}"
           alt="news cover"
           width="288"
-          height="395"
+          height="265"
         />
     
         <p class="newsHomePage-search-category">${news_desk || section}</p>
 
-        <button class="remove-from-favourite" type="button" data-id=${idAll} >Remove from favourite
+        <button class="btn-favorite" type="button" data-id=${idAll} >Remove from favourite
           <svg class="remove-heart" width="16" height="16">
             <use href="${iconsSvgAddRemove}#icon-clicked_heart"></use>
           </svg>
@@ -67,15 +67,6 @@ export function templateFavouroteNews(newsDateResp) {
     </div>`;
     })
     .join('');
-}
-
-// const img = multimedia[2].url;
-
-function checkUrkImg(multimedia) {
-  if (!multimedia.length) {
-    return 'https://placehold.co/400x400?text=NO+IMAGE';
-  }
-  return multimedia[2].url;
 }
 
 function checkUrlImg(item) {

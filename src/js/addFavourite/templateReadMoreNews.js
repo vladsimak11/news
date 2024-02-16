@@ -30,7 +30,7 @@ export function templateNewsReadMore(newsDateResp) {
           src="${image_url || thumbnail_standard || checkUrkImg(oneNewsItem)}"
           alt="news cover"
           width="288"
-          height="395"
+          height="265"
         />
         <p class="newsHomePage-status-read">Already read
                 <svg class="marked-read" width="18" height="18">

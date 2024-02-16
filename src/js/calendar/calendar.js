@@ -5,7 +5,7 @@ const daysTag = document.querySelector('.days'),
   currentDate = document.querySelector('.current-date'),
   prevNextIcon = document.querySelectorAll('.calendar-icons span');
 
-// получение новой даты, текущего года и месяца
+
 let date = new Date(),
   currDay = date.getDate(),
   currMonth = date.getMonth(),
@@ -14,11 +14,11 @@ function showCurrentDate() {
   let value1 = currDay + '-' + (currMonth + 1) + '-' + currYear;
   document.getElementById('input-picker').value = value1;
 }
-//кнопка года
+
 const yearListButton = document.querySelector('.year-change');
 let yearList = document.querySelector('.year-list');
 let yearsListArr = [];
-//активные кнопки
+
 (() => {
   const refs = {
     openModalBtn: document.querySelector('[data-modal-open]'),
@@ -31,15 +31,12 @@ let yearsListArr = [];
 
   refs.openModalBtn.addEventListener('click', toggleModal);
   document.addEventListener('click', hideModals);
-  //   function cleanInput() {
-  //     refs.input.classList.remove('isActive');
-  //   }
+
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden-wrapper');
     refs.input.classList.toggle('isActive');
     refs.arrow.classList.toggle('switched');
     refs.calendarBtn.classList.toggle('switchedColor');
-    // showCurrentDate();/
   }
 
   function hideModals(evt) {
@@ -75,22 +72,22 @@ const months = [
   'December',
 ];
 const renderCalendar = number => {
-  // получение первого дня месяца
+
   let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
     lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
     lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(),
-    // получение последней даты предыдущего месяца
+
     lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
   let liTag = '';
   for (let i = firstDayofMonth; i > 0; i--) {
-    // создал и спрятал дни Прошлого  месяц
+
     liTag += `<li  class="inactive visually-hidden">${
       lastDateofLastMonth - i + 1
     }</li>`;
   }
-  // текущий месяц
+
   for (let i = 1; i <= lastDateofMonth; i++) {
-    // добавление активного класса если текущий день, месяц и год совпадают
+
     let isToday =
       i === date.getDate() &&
       currMonth === new Date().getMonth() &&
@@ -99,17 +96,17 @@ const renderCalendar = number => {
     liTag += `<li  class="${isToday}">${i}</li>`;
   }
   for (let i = lastDayofMonth; i < 6; i++) {
-    // создал и спрятал дни Следующий месяц
+
     liTag += `<li style="display: none" class="inactive">${
       i - lastDayofMonth + 1
     }</li>`;
   }
-  // передача текущего месяца и года как текст
+
   currentDate.innerText = `${months[currMonth]} ${currYear}`;
   daysTag.innerHTML = liTag;
 
   const dayChange = document.querySelector('.days');
-  // function addChangingDayListener() {
+
 
   dayChange.addEventListener('click', evt => {
     [...evt.currentTarget.children].forEach(item => {
@@ -121,7 +118,7 @@ const renderCalendar = number => {
     if (evt.target.textContent.length > 10) {
       return;
     }
-    //отображение выбранной даты день, мес, год
+
     let month = (currMonth + 1).toString();
     document.getElementById('input-picker').value =
       newValueDay.padStart(2, '0') +
@@ -150,20 +147,18 @@ renderCalendar();
 let findUl = document.querySelector('.days');
 
 prevNextIcon.forEach(icon => {
-  // получение предыдущей и следующей стрелки переключения месяца
+
   icon.addEventListener('click', () => {
     currMonth = icon.id === 'prev' ? currMonth - 1 : currMonth + 1;
     if (currMonth < 0 || currMonth > 11) {
-      // создание новой даты текущего года и месяца и передача ее как значения даты
+
       date = new Date(currYear, currMonth, new Date().getDate());
 
-      // обновление текущего года с новой датой года
       currYear = date.getFullYear();
 
-      //обновление текущего месяца с новой датой меся
       currMonth = date.getMonth();
     } else {
-      // передать текущую дату как значение даты
+
       date = new Date();
     }
     renderCalendar();
@@ -171,13 +166,12 @@ prevNextIcon.forEach(icon => {
     let reachUl = daysTag.childNodes;
     reachUl.forEach(elem => {
       if (elem.textContent === test) {
-        // console.log(elem.textContent);
         elem.classList.add('active');
       }
     });
   });
 });
-//открытие массива годов списком//////////////////////////////////////////////
+
 yearListButton.addEventListener('click', generateYearList);
 
 function generateYearList() {

@@ -1,9 +1,6 @@
-import { renderTemplateFavo } from './renderFavourite';
-import { getMostPopularData } from '../allLogicSearch/loadPopularNews/loadPopularNews';
-import { renderTemplateRead } from './renderReadMore';
-
 // ==============
 let incomingСardsHome;
+
 export function comeCardsHome(cardsHome) {
   incomingСardsHome = cardsHome;
 }
@@ -25,6 +22,7 @@ let arrayOfCardsSelectedByReadMoreLink =
   JSON.parse(localStorage.getItem('readMore')) || [];
 
 const galleryHomeRef = document.querySelector('.gallery');
+
 if (galleryHomeRef) {
   galleryHomeRef.addEventListener('click', onClikGalleryHome);
 }
@@ -34,7 +32,8 @@ function onClikGalleryHome(e) {
   const cardsHomeId = e.target.dataset.id;
   const cardsHomeReadLink = e.target.href;
 
-  const btn = e.target.closest(`.add-to-favBtn`);
+  const btn = e.target.closest(`.btn-favorite`);
+  const iconHeart = document.querySelector('#icon-heart');
 
   if (incomingСardsHome) {
     incomingСardsHome.forEach(news => {
@@ -44,8 +43,9 @@ function onClikGalleryHome(e) {
           'favouriteStorage',
           JSON.stringify(arrayOfCardsSelectedById)
         );
-        btn.classList.remove('add-to-favBtn');
-        btn.classList.add('remove-from-favourite');
+
+        btn.classList.add('btn-favorite-add');
+        btn.innerHTML = 'Remove from favorite';
       }
       if (news.url === cardsHomeReadLink) {
         arrayOfCardsSelectedByReadMoreLink.push(news);

@@ -2,15 +2,12 @@ import axios from 'axios';
 
 const API_KEY = '13J2OJQdfSen9tQqVIHpzfTVNgWWH6dm';
 
-const formatDate = someDate => +someDate.split('/').reverse().join(''); //форматуємо дату в суцільне число
-// const inputDate = document.querySelector('.calendar-input'); //інпут календаря
+const formatDate = someDate => +someDate.split('/').reverse().join(''); 
 
-// inputDate.addEventListener('click', onSelectedDate); //при втраті фокусу слухаємо дату
-let dateNumber; //змінна в яку ми винесемо дату календаря
+let dateNumber; 
 
 function onSelectedDate(e) {
-  dateNumber = formatDate(e.target.value); //відформатована дата календаря
-  // console.log(dateNumber, 'onSelectedDate servise');
+  dateNumber = formatDate(e.target.value);
 }
 
 const begin = dateNumber || 20211231;
@@ -28,7 +25,7 @@ export default class NewsApiServis {
         page: this.page,
         q: this.searchQuery,
         begin_date: begin,
-        end_date: end, /// ЗАПРОС ПО ДАТЕ
+        end_date: end,
 
         'api-key': API_KEY,
       },
@@ -36,7 +33,7 @@ export default class NewsApiServis {
 
     const response = await axios.get(BASE_URL, options);
     const gatherData = await response.data;
-    // console.log(gatherData);
+
     return gatherData;
   }
 
