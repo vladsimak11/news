@@ -1,7 +1,7 @@
 import dateFormat, { masks } from 'dateformat';
 import iconsSvgAddRemove from '/assets/svg/symbol-defs.svg';
 
-export function templateFavouroteNews(newsDateResp) {
+export function templateFavoriteNews(newsDateResp) {
   return newsDateResp
     .map(oneNewsItem => {
       const {

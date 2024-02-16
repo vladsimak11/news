@@ -1,4 +1,3 @@
-// ==============
 let incomingСardsHome;
 
 export function comeCardsHome(cardsHome) {
@@ -6,17 +5,19 @@ export function comeCardsHome(cardsHome) {
 }
 
 let incomingСardsSearch;
-export default function addFavourite(cardsSearch) {
+
+export function addFavorite(cardsSearch) {
   incomingСardsSearch = cardsSearch;
 }
 
-let incomingСardsCategori;
-export function addCategori(cardsCategori) {
-  incomingСardsCategori = cardsCategori;
+let incomingСardsCategory;
+
+export function addCategory(cardsCategory) {
+  incomingСardsCategory = cardsCategory;
 }
 
 let arrayOfCardsSelectedById =
-  JSON.parse(localStorage.getItem('favouriteStorage')) || [];
+  JSON.parse(localStorage.getItem('favoriteStorage')) || [];
 
 let arrayOfCardsSelectedByReadMoreLink =
   JSON.parse(localStorage.getItem('readMore')) || [];
@@ -24,23 +25,22 @@ let arrayOfCardsSelectedByReadMoreLink =
 const galleryHomeRef = document.querySelector('.gallery');
 
 if (galleryHomeRef) {
-  galleryHomeRef.addEventListener('click', onClikGalleryHome);
+  galleryHomeRef.addEventListener('click', onClickGalleryHome);
 }
 
 // =========================HOME========================
-function onClikGalleryHome(e) {
+function onClickGalleryHome(e) {
   const cardsHomeId = e.target.dataset.id;
   const cardsHomeReadLink = e.target.href;
 
   const btn = e.target.closest(`.btn-favorite`);
-  const iconHeart = document.querySelector('#icon-heart');
 
   if (incomingСardsHome) {
     incomingСardsHome.forEach(news => {
       if (news.id == cardsHomeId) {
         arrayOfCardsSelectedById.push(news);
         localStorage.setItem(
-          'favouriteStorage',
+          'favoriteStorage',
           JSON.stringify(arrayOfCardsSelectedById)
         );
 
@@ -63,7 +63,7 @@ function onClikGalleryHome(e) {
       if (news._id === cardsHomeId) {
         arrayOfCardsSelectedById.push(news);
         localStorage.setItem(
-          'favouriteStorage',
+          'favoriteStorage',
           JSON.stringify(arrayOfCardsSelectedById)
         );
         btn.classList.remove('add-to-favBtn');
@@ -78,12 +78,12 @@ function onClikGalleryHome(e) {
       }
     });
   }
-  if (incomingСardsCategori) {
-    incomingСardsCategori.map(news => {
+  if (incomingСardsCategory) {
+    incomingСardsCategory.map(news => {
       if (news.slug_name === cardsHomeId) {
         arrayOfCardsSelectedById.push(news);
         localStorage.setItem(
-          'favouriteStorage',
+          'favoriteStorage',
           JSON.stringify(arrayOfCardsSelectedById)
         );
         btn.classList.remove('add-to-favBtn');

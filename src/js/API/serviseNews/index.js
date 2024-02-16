@@ -5,7 +5,7 @@ import NewsApiServis from './serviseNewsSearch';
 import { templateMarkupNews } from './templateMarkupNews';
 import InitPagination from '../../pagination/pagination';
 
-import addFavourite from '../../addFavourite/addFavourite';
+import {addFavorite} from '../../addFavorite/addFavorite';
 
 import newDefaultMarkup from '../../defaultPage/defaultPageHome';
 
@@ -87,7 +87,7 @@ async function requestToServer(valueQuery) {
 
     document.getElementById('pagination-container').style.display = 'flex';
 
-    addFavourite(totalResult);
+    addFavorite(totalResult);
   } catch (error) {
     console.error(error);
   }

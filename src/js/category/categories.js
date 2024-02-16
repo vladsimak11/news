@@ -3,7 +3,7 @@ import { getCategoriesFromApi } from './api-categories';
 import { NewsApiCategories } from './api-categories';
 
 
-import { addCategori } from '../addFavourite/addFavourite';
+import { addCategory } from '../addFavorite/addFavorite';
 
 import newDefaultMarkup from '../defaultPage/defaultPageHome';
 
@@ -70,7 +70,7 @@ function onClick(e) {
     const gallery = document.querySelector('.gallery');
     const categoriesMarkup = get.map(element => newsMarkup(element));
     gallery.innerHTML = categoriesMarkup.join('');
-    addCategori(get);
+    addCategory(get);
   });
 }
 function onCategoryOthers() {

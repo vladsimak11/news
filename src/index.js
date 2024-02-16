@@ -1,7 +1,7 @@
 import './js/API/serviseNews/index';
-import './js/addFavourite/addFavourite';
+import './js/addFavorite/addFavorite';
 
-import './js/addFavourite/renderFavourite';
+import './js/addFavorite/renderFavorite';
 
 import './js/header/mobileSearch';
 import './js/header/headerTheme';

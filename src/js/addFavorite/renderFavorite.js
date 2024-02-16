@@ -1,4 +1,4 @@
-import { templateFavouroteNews } from './templateFavouroteNews';
+import { templateFavoriteNews } from './templateFavoriteNews';
 
 const galleryFavouriteRef = document.querySelector('.gallery-favourite');
 
@@ -6,7 +6,7 @@ if (galleryFavouriteRef) {
   galleryFavouriteRef.addEventListener('click', onClikDelCards);
 }
 
-const savedNews = JSON.parse(localStorage.getItem('favouriteStorage')) || [];
+const savedNews = JSON.parse(localStorage.getItem('favoriteStorage')) || [];
 
 renderTemplateFavo(savedNews);
 
@@ -15,7 +15,7 @@ const refCards = document.querySelectorAll('.newsHomePage-card');
 function onClikDelCards(e) {
   const idCardsFov = e.target.dataset.id;
 
-  let localStorageGetKey = localStorage.getItem('favouriteStorage');
+  let localStorageGetKey = localStorage.getItem('favoriteStorage');
   let cardsLocalParse = JSON.parse(localStorageGetKey);
   let filter = [];
   cardsLocalParse.forEach(on => {
@@ -26,7 +26,7 @@ function onClikDelCards(e) {
     }
   });
 
-  localStorage.setItem('favouriteStorage', JSON.stringify(filter));
+  localStorage.setItem('favoriteStorage', JSON.stringify(filter));
 
   refCards.forEach(idCards => {
     if (idCards.dataset.id === idCardsFov) {
@@ -36,8 +36,7 @@ function onClikDelCards(e) {
 }
 
 export function renderTemplateFavo(newsDateResp) {
-  // console.log(newsDateResp);
   if (galleryFavouriteRef) {
-    galleryFavouriteRef.innerHTML = templateFavouroteNews(newsDateResp);
+    galleryFavouriteRef.innerHTML = templateFavoriteNews(newsDateResp);
   }
 }
