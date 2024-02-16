@@ -1,14 +1,15 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
-@import './base/common';
 @import './utils/variables';
+@import './base/common';
 
-
-@import './components/section';
 @import './components/container';
 
 @import './burger/burger';
+
 @import './header/header';
+
+@import './card//card';
 
 @import './home_page/home_page';
 @import './home_page/calendar';

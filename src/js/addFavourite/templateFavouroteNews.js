@@ -37,15 +37,16 @@ export function templateFavouroteNews(newsDateResp) {
           width="288"
           height="395"
         />
-        // <p class="dispNo newsHomePage-status-read">Already read</p>
+    
         <p class="newsHomePage-search-category">${news_desk || section}</p>
 
         <button class="remove-from-favourite" type="button" data-id=${idAll} >Remove from favourite
-                    <svg class="remove-heart" width="16" height="16">
-                        <use href="${iconsSvgAddRemove}#icon-clicked_heart"></use>
-                    </svg>
-                </button>
+          <svg class="remove-heart" width="16" height="16">
+            <use href="${iconsSvgAddRemove}#icon-clicked_heart"></use>
+          </svg>
+        </button>
       </div>
+      
       <div>
         <h2 class="newsHomePage-title">
           ${title || headline.main}

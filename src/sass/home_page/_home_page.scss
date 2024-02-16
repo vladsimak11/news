@@ -1,6 +1,5 @@
-
 .dark body {
-  background-color: var(--darkmode);
+  background-color: $darkmode;
 }
 
 .home-page-container {
@@ -18,7 +17,7 @@
   }
 }
 .dark .home-page-container {
-  background-color: var(--darkmode);
+  background-color: $darkmode;
 }
 .items-to-choose {
   display: flex;
@@ -38,8 +37,8 @@
 }
 .newsHP-categories {
   border-radius: 20px;
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
+  color: $accent-color;
+  border: 1px solid $accent-color;
   padding: 7px 13px;
   font-size: 12px;
   line-height: 1.33;
@@ -53,12 +52,12 @@
 }
 
 .newsHP-categories:focus {
-  background-color: var(--accent-color);
-  color: var(--extra-color);
+  background-color: $accent-color;
+  color: $extra-color;
 }
 button.newsHP-categories:hover {
-  background-color: var(--accent-color);
-  color: var(--extra-color);
+  background-color: $accent-color;
+  color: $extra-color;
 
   svg.categ-arrow-down {
     fill: #fff;
@@ -83,13 +82,18 @@ button.newsHP-categories:hover {
   font-size: 12px;
   line-height: 1.14;
   padding: 8px 21px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid $accent-color;
   border-radius: 20px;
-  color: var(--accent-color);
+  color: $accent-color;
   display: flex;
   justify-content: center;
   height: 31px;
   cursor: pointer;
+
+  &:hover {
+    color: $extra-color;
+  }
+
   @media screen and (min-width: 1280px) {
     padding: 8px 22.5px;
     font-size: 14px;
@@ -105,8 +109,8 @@ button.newsHP-categories:hover {
   }
 }
 .article-btn:hover {
-  background-color: var(--accent-color);
-  color: var(--extra-color);
+  background-color: $accent-color;
+  color: $extra-color;
   svg.others-arrow-down {
     fill: #fff;
   }
@@ -114,24 +118,24 @@ button.newsHP-categories:hover {
 .categ-arrow-down,
 .others-arrow-down {
   margin-left: 10px;
-  fill: var(--accent-color);
+  fill: $accent-color;
   rotate: 0;
   transition: all 250ms ease-in-out;
 }
 .calendar-arrow-down {
   margin-left: 14px;
-  fill: var(--light-color);
+  fill: $light-color;
 }
 .calendar-arrow-up {
   display: none;
 }
 
 .newsHP-calendar:focus .calendar-svg {
-  fill: var(--extra-color);
+  fill: $extra-color;
 }
 .calendar-svg {
   margin-right: 10px;
-  fill: var(--accent-color);
+  fill: $accent-color;
 }
 
 /////////////виджет погоды
@@ -171,7 +175,7 @@ button.newsHP-categories:hover {
   font-size: 50px;
   line-height: 1.16;
   padding-left: 0;
-  color: var(--extra-color);
+  color: $extra-color;
   @media screen and (min-width: 768px) {
     font-size: 74px;
     line-height: 1.17;
@@ -181,7 +185,7 @@ button.newsHP-categories:hover {
 .whats-the-weather {
   font-size: 24px;
   line-height: 1.16;
-  color: var(--extra-color);
+  color: $extra-color;
   margin-bottom: 15px;
   @media screen and (min-width: 768px) {
     font-size: 34px;
@@ -194,13 +198,13 @@ button.newsHP-categories:hover {
   align-items: center;
   cursor: pointer;
   opacity: 0.9;
-  color: var(--extra-color);
+  color: $extra-color;
   background: linear-gradient(
     90deg,
     rgba(164, 146, 154, 1) 8%,
     rgba(61, 103, 215, 1) 100%
   );
-  box-shadow: 0 0.5em 0.5em -0.4em var(--extra-color);
+  box-shadow: 0 0.5em 0.5em -0.4em $extra-color;
   border-radius: 10px;
   font-size: 16px;
   line-height: 1.15;
@@ -246,7 +250,7 @@ button.newsHP-categories:hover {
   font-family: 'Roboto';
   font-size: 28px;
   line-height: 1.17;
-  color: var(--extra-color);
+  color: $extra-color;
   text-align: center;
   @media screen and (min-width: 768px) {
     font-size: 46px;
@@ -266,14 +270,14 @@ button.newsHP-categories:hover {
   font-size: 16px;
   line-height: 1.18;
   padding: 8px 14px;
-  color: var(--extra-color);
+  color: $extra-color;
   background: rgb(164, 146, 154);
   background: linear-gradient(
     90deg,
     rgba(164, 146, 154, 1) 8%,
     rgba(61, 103, 215, 1) 100%
   );
-  box-shadow: 0 0.5em 0.5em -0.4em var(--extra-color);
+  box-shadow: 0 0.5em 0.5em -0.4em extra-color;
   opacity: 0.8;
   margin-bottom: 32px;
   @media screen and (min-width: 768px) {
@@ -314,20 +318,6 @@ button.newsHP-categories:hover {
   }
 }
 
-.newsHomePage-card {
-  height: 630px;
-  box-shadow: 3px 3px 10px rgb(153, 147, 149);
-  border-radius: 15px;
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    width: 353px;
-    height: 675px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 395px;
-    height: 675px;
-  }
-}
-
 .dark .newsHomePage-card {
   box-shadow: 0px 10px 13px -7px #000000,
     0px 5px 15px 0px rgba(236, 209, 235, 0.979);
@@ -339,172 +329,23 @@ button.newsHP-categories:hover {
   box-shadow: 3px 3px 20px rgb(82, 62, 69);
   border-radius: 15px;
 }
-.card-picture {
-  position: relative;
-  margin-bottom: 20px;
-}
-.newsHomePage-image {
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 15px;
-}
-.newsHomePage-search-category {
-  position: absolute;
-  left: 0px;
-  top: 40px;
-  opacity: 0.7;
-  background-color: var(--accent-color);
-  padding: 5px 8px;
-  color: var(--extra-color);
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.newsHomePage-status-read {
-  font-weight: 700;
-  position: absolute;
-  color: var(--marked-read-color);
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    left: 167px;
-    top: 14px;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    left: 225px;
-    top: 20px;
-  }
-  @media screen and (min-width: 1280px) {
-    left: 267px;
-    top: 20px;
-  }
-}
-.dispNo.newsHomePage-status-read {
-  display: none;
-}
+
 .marked-read {
   text-align: center;
 }
-.add-to-favBtn {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  outline: none;
-  gap: 5px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.14;
-  border-radius: 20px;
-  background-color: var(--extra-color);
-  border: 2px solid var(--accent-color);
-  padding: 6px 12px;
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    left: 154px;
-    top: 355px;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    left: 215px;
-    top: 355px;
-  }
-  @media screen and (min-width: 1280px) {
-    left: 256px;
-    top: 355px;
-  }
-}
-.remove-from-favourite {
-  position: absolute;
-  cursor: pointer;
-  align-items: center;
-  display: flex;
-  gap: 5px;
-  border-width: 0;
-  width: 168px;
-  padding: 6px 12px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.14;
-  border-radius: 20px;
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    left: 112px;
-    top: 355px;
-  }
-  @media screen and (min-width: 768px) and (max-width: 1279px) {
-    left: 173px;
-    top: 355px;
-  }
-  @media screen and (min-width: 1280px) {
-    left: 215px;
-    top: 355px;
-  }
-}
 
-.newsHomePage-title {
-  height: 145px;
-  padding: 5px;
-  font-weight: 700;
-  line-height: 1.37;
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
-  text-align: center;
-
-  color: var(--extra-color);
-  background: var(--accent-color);
-
-  @media screen and (min-width: 320px) and (max-width: 767px) {
-    font-size: 24px;
-  }
-  
-  @media screen and (min-width: 768px) {
-    font-size: 28px;
-  }
-}
-
-.newsHomePage-text {
-
-  padding-left: 5px;
-  padding-right: 5px;
-
-  @media screen and (max-width: 767px) {
-    max-height: 50px;
-    overflow: hidden;
-  }
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    height: 66px;
-  }
-}
 .dark .newsHomePage-text {
-  color: var(--extra-color);
+  color: $extra-color;
   box-shadow: 0px 10px 13px -7px #000000,
     0px 5px 15px 0px rgba(236, 209, 235, 0.979);
 }
 
-.homePage-readMore {
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
-  @media screen and (max-width: 767px) {
-    height: 15px;
-  }
-  @media screen and (min-width: 1280px) {
-    font-size: 16px;
-    height: 22px;
-  }
-}
-.newsHomePage-date {
-  color: var(--light-color);
-}
-.newsHomePage-readMore-link {
-  color: var(--accent-color);
-  text-decoration: none;
-  padding-bottom: 3px;
-}
-
 .next-btn {
   margin-left: 10px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid $accent-color;
   cursor: pointer;
   height: 28px;
+
   @media screen and (min-width: 1280px) {
     margin-left: 18px;
     font-size: 16px;

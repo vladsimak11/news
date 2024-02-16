@@ -31,15 +31,15 @@
 }
 .categories:hover {
   .article-btn {
-    background-color: var(--accent-color);
-    color: var(--extra-color);
+    background-color: $accent-color;
+    color: $extra-color;
     svg.others-arrow-down {
       fill: #fff;
     }
   }
   .newsHP-categories {
-    background-color: var(--accent-color);
-    color: var(--extra-color);
+    background-color: $accent-color;
+    color: $extra-color;
 
     svg.categ-arrow-down {
       fill: #fff;

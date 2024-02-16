@@ -1,8 +1,10 @@
-:root {
-  --accent-color: #4440f6;
-  --main-text-color: #111321;
-  --light-color: #a8a8a8;
-  --extra-color: #ffffff;
-  --marked-read-color: #00dd73;
-  --darkmode: #2e2e2e;
-}
+$accent-color: #4440f6;
+$main-text-color: #111321;
+$light-color: #a8a8a8;
+$extra-color: #ffffff;
+$marked-read-color: #00dd73;
+$darkmode: #2e2e2e;
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1200px;

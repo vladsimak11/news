@@ -8,7 +8,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.35;
-  color: var(--main-text-color);
+  color: $main-text-color;
 }
 
 h1,
@@ -23,7 +23,6 @@ p {
 
 img {
   display: block;
-  // max-width: 100%;
   width: 100%;
   height: auto;
 }
