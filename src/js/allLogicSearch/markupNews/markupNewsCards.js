@@ -24,9 +24,7 @@ export const newsCardMarkup = ({
 
         <button class="btn-favorite" type="button" data-id="${id}">
           Add to favourite
-            <svg class="heart" width="16" height="16">
-              <use href="${iconsSvgAdd}#icon-unclicked_heart"></use>
-            </svg>
+
         </button>
       </div>
 

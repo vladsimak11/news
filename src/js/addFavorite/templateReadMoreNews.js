@@ -38,10 +38,10 @@ export function templateNewsReadMore(newsDateResp) {
                 </svg>
         <p class="newsHomePage-search-category">${news_desk || section}</p>
 
-        <button class="remove-from-favourite" type="button" data-id=${idAll} >Remove from favourite
-                    <svg class="remove-heart" width="16" height="16">
-                        <use href="../assets/svg/symbol-defs.svg#icon-clicked_heart"></use>
-                    </svg>
+        <button class="btn-favorite" type="button" data-id=${idAll} >Remove from favourite
+                    // <svg class="remove-heart" width="16" height="16">
+                    //     <use href="../assets/svg/symbol-defs.svg#icon-clicked_heart"></use>
+                    // </svg>
                 </button>
       </div>
       <div>

@@ -22,7 +22,17 @@ let arrayOfCardsSelectedById =
 let arrayOfCardsSelectedByReadMoreLink =
   JSON.parse(localStorage.getItem('readMore')) || [];
 
+
+
 const galleryHomeRef = document.querySelector('.gallery');
+
+let arrFavoriteId = JSON.parse(localStorage.getItem('favoriteId')) || [];
+
+window.addEventListener('load', loadRemoveBtn);
+
+function loadRemoveBtn() {
+  console.log('loadBtn')
+}
 
 if (galleryHomeRef) {
   galleryHomeRef.addEventListener('click', onClickGalleryHome);
@@ -44,9 +54,13 @@ function onClickGalleryHome(e) {
           JSON.stringify(arrayOfCardsSelectedById)
         );
 
+        arrFavoriteId.push(cardsHomeId);
+        localStorage.setItem('favoriteId', JSON.stringify(arrFavoriteId));
+
         btn.classList.add('btn-favorite-add');
         btn.innerHTML = 'Remove from favorite';
       }
+
       if (news.url === cardsHomeReadLink) {
         arrayOfCardsSelectedByReadMoreLink.push(news);
         localStorage.setItem(
