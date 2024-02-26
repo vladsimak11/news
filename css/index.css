@@ -1385,6 +1385,11 @@ button.newsHP-categories:hover svg.categ-arrow-down {
 }
 @media screen and (min-width: 768px) {
   .weather-date {
+    margin-bottom: 80px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .weather-date {
     margin-bottom: 110px;
   }
 }

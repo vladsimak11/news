@@ -265,6 +265,10 @@ button.newsHP-categories:hover {
   margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
+    margin-bottom: 80px;
+  }
+
+  @media screen and (min-width: 1280px) {
     margin-bottom: 110px;
   }
 }
