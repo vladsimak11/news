@@ -1388,11 +1388,6 @@ button.newsHP-categories:hover svg.categ-arrow-down {
     margin-bottom: 80px;
   }
 }
-@media screen and (min-width: 1280px) {
-  .weather-date {
-    margin-bottom: 110px;
-  }
-}
 
 .weatherApp-link {
   text-decoration: none;
