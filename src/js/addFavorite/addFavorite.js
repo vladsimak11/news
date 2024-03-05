@@ -24,7 +24,7 @@ let arrayOfCardsSelectedByReadMoreLink =
 
 const galleryHomeRef = document.querySelector('.gallery');
 
-// let arrFavoriteId = JSON.parse(localStorage.getItem('favoriteId')) || [];
+let arrFavoriteId = JSON.parse(localStorage.getItem('favoriteId')) || [];
 
 window.addEventListener('load', loadRemoveBtn);
 
