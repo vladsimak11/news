@@ -26,6 +26,8 @@ const galleryHomeRef = document.querySelector('.gallery');
 
 let arrFavoriteId = JSON.parse(localStorage.getItem('favoriteId')) || [];
 
+
+
 if (galleryHomeRef) {
   galleryHomeRef.addEventListener('click', onClickGalleryHome);
 }
@@ -40,21 +42,20 @@ function onClickGalleryHome(e) {
   if (incomingСardsHome) {
     incomingСardsHome.forEach(news => {
       if (news.id == cardsHomeId) {
-        arrayOfCardsSelectedById.push(news);
-        localStorage.setItem(
-          'favoriteStorage',
-          JSON.stringify(arrayOfCardsSelectedById)
-        );
 
         if (!arrFavoriteId.includes(cardsHomeId)) {
+
+          arrayOfCardsSelectedById.push(news);
+          localStorage.setItem(
+            'favoriteStorage',
+            JSON.stringify(arrayOfCardsSelectedById)
+          );
+
           arrFavoriteId.push(cardsHomeId);
           localStorage.setItem('favoriteId', JSON.stringify(arrFavoriteId));
           btn.classList.add('btn-favorite-add');
           btn.innerHTML = 'Remove from favorite';
-        } else {
-          btn.classList.remove('btn-favorite-add');
-          btn.innerHTML = 'Add to favorite';
-        }
+        } 
       }
 
       if (news.url === cardsHomeReadLink) {
