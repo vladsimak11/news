@@ -29,7 +29,7 @@ export const newsCardMarkup = ({
         <button class="btn-favorite ${
           checkId && 'btn-favorite-add'
         }" type="button" data-id="${id}">
-          ${checkId ? 'Remove from favorite' : 'Add to favorite'}
+          ${checkId ? 'News in favorites' : 'Add to favorite'}
         </button>
       </div>
 

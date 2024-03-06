@@ -29,7 +29,7 @@ function onClickRemoveCard(e) {
 
   let favoriteId = [];
 
-  arrFavoriteId.forEach(id => {
+  arrFavoriteId.filter(id => {
     if (id != idCardFavorite) {
       favoriteId.push(id);
     }

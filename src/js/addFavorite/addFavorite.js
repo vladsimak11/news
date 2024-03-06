@@ -54,7 +54,7 @@ function onClickGalleryHome(e) {
           arrFavoriteId.push(cardsHomeId);
           localStorage.setItem('favoriteId', JSON.stringify(arrFavoriteId));
           btn.classList.add('btn-favorite-add');
-          btn.innerHTML = 'Remove from favorite';
+          btn.innerHTML = 'News in favorites';
         } 
       }
 
