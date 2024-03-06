@@ -1,3 +1,5 @@
+const arrFavoriteId = JSON.parse(localStorage.getItem('favoriteId')) || [];
+
 export const newsCardMarkup = ({
   id,
   image_url,
@@ -7,6 +9,10 @@ export const newsCardMarkup = ({
   published_date,
   url,
 }) => {
+  let checkId = arrFavoriteId.includes(String(id));
+
+  console.log(checkId);
+
   return `
     <div class="newsHomePage-card" data-id=${id}>
       <div class="card-picture">
@@ -20,9 +26,10 @@ export const newsCardMarkup = ({
         <p class="dispNo newsHomePage-status-read">Already read</p>
         <p class="newsHomePage-search-category">${section}</p>
 
-        <button class="btn-favorite" type="button" data-id="${id}">
-          Add to favourite
-
+        <button class="btn-favorite ${
+          checkId && 'btn-favorite-add'
+        }" type="button" data-id="${id}">
+          ${checkId ? 'Remove from favorite' : 'Add to favorite'}
         </button>
       </div>
 
@@ -41,5 +48,5 @@ export const newsCardMarkup = ({
       </div>
     </div>
     </div>
-    `;
+  `;
 };
