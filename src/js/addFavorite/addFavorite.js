@@ -26,12 +26,6 @@ const galleryHomeRef = document.querySelector('.gallery');
 
 let arrFavoriteId = JSON.parse(localStorage.getItem('favoriteId')) || [];
 
-window.addEventListener('load', loadRemoveBtn);
-
-function loadRemoveBtn() {
-  console.log('loadBtn');
-}
-
 if (galleryHomeRef) {
   galleryHomeRef.addEventListener('click', onClickGalleryHome);
 }
@@ -55,10 +49,12 @@ function onClickGalleryHome(e) {
         if (!arrFavoriteId.includes(cardsHomeId)) {
           arrFavoriteId.push(cardsHomeId);
           localStorage.setItem('favoriteId', JSON.stringify(arrFavoriteId));
+          btn.classList.add('btn-favorite-add');
+          btn.innerHTML = 'Remove from favorite';
+        } else {
+          btn.classList.remove('btn-favorite-add');
+          btn.innerHTML = 'Add to favorite';
         }
-
-        btn.classList.add('btn-favorite-add');
-        btn.innerHTML = 'Remove from favorite';
       }
 
       if (news.url === cardsHomeReadLink) {
@@ -112,14 +108,4 @@ function onClickGalleryHome(e) {
       }
     });
   }
-  checkCardsLokal();
-}
-
-function checkCardsLokal(params) {
-  const readStatus = document.querySelector('newsHomePage-status-read');
-  const idHomeCards = incomingСardsHome.map(on => on.id);
-  // console.log(idHomeCards);
-
-  const idcardsRead = arrayOfCardsSelectedByReadMoreLink.map(one => one.id);
-  // console.log(idcardsRead);
 }

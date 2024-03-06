@@ -3,16 +3,16 @@ import { templateFavoriteNews } from './templateFavoriteNews';
 const galleryFavouriteRef = document.querySelector('.gallery-favourite');
 
 if (galleryFavouriteRef) {
-  galleryFavouriteRef.addEventListener('click', onClikDelCards);
+  galleryFavouriteRef.addEventListener('click', onClickRemoveCard);
 }
 
-const savedNews = JSON.parse(localStorage.getItem('favoriteStorage')) || [];
+const favoriteList = JSON.parse(localStorage.getItem('favoriteStorage')) || [];
 
-renderTemplateFavo(savedNews);
+renderTemplateFavorite(favoriteList);
 
 const refCards = document.querySelectorAll('.newsHomePage-card');
 
-function onClikDelCards(e) {
+function onClickRemoveCard(e) {
   const idCardsFov = e.target.dataset.id;
 
   let localStorageGetKey = localStorage.getItem('favoriteStorage');
@@ -35,7 +35,7 @@ function onClikDelCards(e) {
   });
 }
 
-export function renderTemplateFavo(newsDateResp) {
+export function renderTemplateFavorite(newsDateResp) {
   if (galleryFavouriteRef) {
     galleryFavouriteRef.innerHTML = templateFavoriteNews(newsDateResp);
   }

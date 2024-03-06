@@ -1,5 +1,3 @@
-import iconsSvgAdd from '/assets/svg/symbol-defs.svg';
-
 export const newsCardMarkup = ({
   id,
   image_url,

@@ -1,5 +1,4 @@
-import dateFormat, { masks } from 'dateformat';
-import iconsSvgAddRemove from '/assets/svg/symbol-defs.svg';
+import dateFormat from 'dateformat';
 
 export function templateFavoriteNews(newsDateResp) {
   return newsDateResp
@@ -20,7 +19,7 @@ export function templateFavoriteNews(newsDateResp) {
         url,
         multimedia,
         slug_name,
-        thumbnail_standard, //временно
+        thumbnail_standard,
       } = oneNewsItem;
       const idAll = _id || id || slug_name;
 
