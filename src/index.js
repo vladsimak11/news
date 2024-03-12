@@ -7,6 +7,8 @@ import './js/header/mobileSearch';
 import './js/header/headerTheme';
 import './js/header/headerCurrent';
 
+import './js/subscribe/subscribe';
+
 import './js/allLogicSearch/index';
 
 import './js/burger/burger';
