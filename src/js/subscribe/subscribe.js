@@ -5,7 +5,7 @@ let email = document.querySelector('input[name="footer-email"]');
 
 const BASE_URL = 'https://news-back-5zr9.onrender.com/users/subscribe';
 
-const arrUsers = JSON.parse(localStorage.getItem('usersEmail')) || [];;
+const arrUsers = JSON.parse(localStorage.getItem('usersEmail')) || [];
 
 formSubscribe.addEventListener('submit', onFormSubmit);
 
@@ -18,10 +18,10 @@ function onFormSubmit(event) {
     localStorage.setItem('usersEmail', JSON.stringify(arrUsers));
     Notify.success('You have subscribed to the news!');
   } else {
-    Notify.failure('You have subscribed to the news!');
+    Notify.failure('You are already subscribed to the news!');
   }
 
-  console.log(arrUsers)
+  console.log(arrUsers);
   email.value = '';
 }
 
@@ -38,7 +38,7 @@ function fetchUserCreate(user) {
     },
   })
     .then(response => {
-        response.json();
+      response.json();
     })
     .catch(error => console.log(error));
 }
