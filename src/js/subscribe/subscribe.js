@@ -14,9 +14,7 @@ function onFormSubmit(event) {
 
   fetchGetEmails().then(({ emails }) => {
     console.log(emails);
-    let userEmail = emails.find(item => item.email == value);
-    console.log(userEmail.email);
-
+    let userEmail = emails.find(item => item.email == value) || ' ';
     if (userEmail.email) {
       Notify.failure('You are already subscribed to news!');
     } else {
