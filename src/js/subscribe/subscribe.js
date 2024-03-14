@@ -7,12 +7,24 @@ const BASE_URL = 'https://news-back-5zr9.onrender.com/users/subscribe';
 
 formSubscribe.addEventListener('submit', onFormSubmit);
 
-async function onFormSubmit(event) {
+function onFormSubmit(event) {
   event.preventDefault();
-  // fetchUserCreate(email.value);
-  const response = await fetchGetEmails();
-  console.log(response.emails);
-  // Notify.success('You have subscribed to the news!');
+
+  let { value } = email;
+
+  fetchGetEmails().then(({ emails }) => {
+    console.log(emails);
+    let userEmail = emails.find(item => item.email == value);
+    console.log(userEmail.email);
+
+    if (userEmail.email) {
+      Notify.failure('You are already subscribed to news!');
+    } else {
+      fetchUserCreate(value);
+      Notify.success('You are subscribed to the news!');
+    }
+  });
+
   email.value = '';
 }
 
@@ -36,8 +48,6 @@ function fetchUserCreate(user) {
 
 function fetchGetEmails() {
   return fetch(BASE_URL)
-    .then(response => {
-      return response.emails;
-    })
+    .then(response => response.json())
     .catch(error => console.log(error));
 }
