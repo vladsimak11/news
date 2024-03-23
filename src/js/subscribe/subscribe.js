@@ -16,10 +16,10 @@ function onFormSubmit(event) {
     console.log(emails);
     let userEmail = emails.find(item => item.email == value) || ' ';
     if (userEmail.email) {
-      Notify.failure('You are already subscribed to news!');
+      Notify.failure(`You are already subscribed to news. Your email: ${value}`);
     } else {
       fetchUserCreate(value);
-      Notify.success('You are subscribed to the news!');
+      Notify.success(`You are subscribed to the news. Your email: ${value}`);
     }
   });
 
