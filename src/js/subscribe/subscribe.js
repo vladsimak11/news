@@ -3,7 +3,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const formSubscribe = document.querySelector('.footer-form');
 let email = document.querySelector('input[name="footer-email"]');
 
-const BASE_URL = 'https://news-back-5zr9.onrender.com/users/subscribe';
+const BASE_URL = 'https://news-back-five.vercel.app/users/subscribe';
 
 formSubscribe.addEventListener('submit', onFormSubmit);
 
@@ -11,6 +11,7 @@ function onFormSubmit(event) {
   event.preventDefault();
 
   let { value } = email;
+  console.log('Email:' + value);
 
   fetchGetEmails().then(({ emails }) => {
     console.log(emails);
